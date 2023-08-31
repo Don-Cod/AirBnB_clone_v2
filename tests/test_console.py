@@ -1,17 +1,14 @@
 #!/usr/bin/python3
-'''Console test suite'''
-import sys
+"""Defines unittest for console.py"""
+import os
+import pep8
 import unittest
+import models
+import unittest.mock import patch
 from io import StringIO
 from console import HBNBCommand
-from models.stringtemplates import HBNB_TYPE_STORAGE, FILE, DB
-from os import getenv, rename, remove
-from models import storage
-from models import State
-from models.engine.db_storage import DBStorage
-from unittest.mock import create_autospec
-import datetime
-from pycodestyle import StyleGuide
+from models.engine.db_storage import DBstorage
+from models.engine.file_storage import Filestorage
 
 
 class TestConsole(unittest.TestCase):
